@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-07-11T15:09:44.508723+00:00",
+  "N": 50000,
+  "churn_rate": 0.01,
+  "graph_gen_time_s": 0.35,
+  "icc_init_time_s": 150.825,
+  "fr_elapsed_ms": 146842.566,
+  "icc_elapsed_ms": 589305.092,
+  "icc_n_affected": 36235,
+  "icc_n_affected_pct": 72.47,
+  "old_icc_ms_reference": 2220000,
+  "speedup_vs_old_icc": 3.77,
+  "max_sample_diff": 4.63e-06,
+  "large_diff_count": 0,
+  "projected_full_run_hours": 27.61,
+  "verdict": "PASS"
+}

@@ -1,0 +1,2 @@
+N,failure_rate,n_valid_runs,mean_steps_closeness,mean_steps_degree,median_steps_closeness,median_steps_degree,pct_closeness_faster,pct_same_node,closeness_censored_pct,degree_censored_pct,test_used,test_statistic,p_value,significant,h4_verdict
+200,0.1,5,501.0,501.0,501.0,501.0,0.0,100.0,100.0,100.0,Independent T-Test,,,False,REJECTED_DEGREE_FASTER

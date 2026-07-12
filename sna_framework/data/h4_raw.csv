@@ -1,0 +1,6 @@
+N,failure_rate,run_idx,lcc_size,n_removed,closeness_seed,closeness_score,degree_seed,degree_score,same_node,steps_closeness,steps_degree,closeness_censored,degree_censored,closeness_faster
+200,0.1,0,180,20,0,0.4931129476584022,0,40,True,501,501,True,True,False
+200,0.1,1,177,20,0,0.48753462603878117,0,42,True,501,501,True,True,False
+200,0.1,2,179,20,0,0.49859943977591037,0,41,True,501,501,True,True,False
+200,0.1,3,180,20,0,0.494475138121547,0,41,True,501,501,True,True,False
+200,0.1,4,176,20,0,0.43424317617866004,0,40,True,501,501,True,True,False

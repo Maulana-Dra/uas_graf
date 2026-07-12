@@ -1,0 +1,2 @@
+N,failure_rate,n_valid_runs,mean_steps_closeness,std_steps_closeness,median_steps_closeness,mean_steps_degree,std_steps_degree,median_steps_degree,pct_same_node,pct_closeness_faster,pct_closeness_censored,pct_degree_censored,test_used,test_stat,p_value,significant,effect_size_val,effect_size_label,h4_verdict
+200,0.1,5,501.0,0.0,501.0,501.0,0.0,501.0,100.0,0.0,100.0,100.0,Independent T-Test,,,False,,Cohen's d,REJECTED_DEGREE_FASTER

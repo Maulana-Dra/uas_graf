@@ -1,0 +1,2 @@
+N,mean_pearson_r,std_pearson_r,min_pearson_r,mean_rmse,mean_nrmse,mean_fr_ms,mean_lba_ms,mean_speedup,all_meet_target,h2_verdict
+1000,0.9808373913603188,0.005353251524369389,0.97705207090604,12.158714770820637,60.94596449321993,530.6314500003282,8.972499999799766,59.18999179229644,True,ACCEPTED

@@ -1,0 +1,2 @@
+N,churn_rate,n_batches,mean_fr_ms,mean_icc_ms,mean_efficiency_pct,std_efficiency_pct,shapiro_p,test_used,test_stat,p_value,significant,cohens_d,effect_size,h1_criterion
+10000,0.05,3,90152.05816666638,105582.4073999999,,,0.632763738505962,Paired T-Test,-0.46764516494538927,0.6860446126888111,False,-0.26999506186644745,small,INSUFFICIENT_DATA
