@@ -168,3 +168,18 @@
 [2026-07-13 12:57:22] N=10000 churn=0.1 batch=23/30 | FR=6.5s | ICC=31.6s (n_affected=10,000/10,000=100.0%) | batch_total=38.1s | est. sisa kombinasi ini: ~0.07 jam
 [2026-07-13 12:58:22] N=10000 churn=0.1 batch=24/30 | FR=7.5s | ICC=36.1s (n_affected=10,000/10,000=100.0%) | batch_total=43.6s | est. sisa kombinasi ini: ~0.06 jam
 [2026-07-13 12:59:22] N=10000 churn=0.1 batch=25/30 | FR=7.8s | ICC=34.7s (n_affected=10,000/10,000=100.0%) | batch_total=42.6s | est. sisa kombinasi ini: ~0.05 jam
+[2026-07-13 13:00:24] N=10000 churn=0.1 batch=26/30 | FR=7.3s | ICC=37.0s (n_affected=10,000/10,000=100.0%) | batch_total=44.4s | est. sisa kombinasi ini: ~0.04 jam
+[2026-07-13 13:01:29] N=10000 churn=0.1 batch=27/30 | FR=9.3s | ICC=37.2s (n_affected=10,000/10,000=100.0%) | batch_total=46.4s | est. sisa kombinasi ini: ~0.03 jam
+[2026-07-13 13:02:24] N=10000 churn=0.1 batch=28/30 | FR=7.9s | ICC=32.4s (n_affected=10,000/10,000=100.0%) | batch_total=40.3s | est. sisa kombinasi ini: ~0.02 jam
+[2026-07-13 13:03:22] N=10000 churn=0.1 batch=29/30 | FR=8.0s | ICC=34.7s (n_affected=10,000/10,000=100.0%) | batch_total=42.7s | est. sisa kombinasi ini: ~0.01 jam
+[2026-07-13 13:04:20] N=10000 churn=0.1 batch=30/30 | FR=7.9s | ICC=32.9s (n_affected=10,000/10,000=100.0%) | batch_total=40.8s | est. sisa kombinasi ini: ~0.00 jam
+[2026-07-13 13:04:20] === FINISHED N=10000 churn=0.1 | session_added_batches=15 | avg_batch=39.8s | mean_efficiency_pct=-441.7% ===
+[2026-07-13 13:04:20] N=50000 churn=0.01: has 15 batches, need 15 more to reach 30.
+[2026-07-13 13:04:20] === STARTING N=50000 churn=0.01 | standard (30 batches) ===
+[2026-07-13 13:11:21] Replaying 15 previously-measured batches to reconstruct graph/ICC state (not re-timed)...
+[2026-07-13 13:53:22] NOTE: Auto-stop is configured to trigger after N=50000 churn=0.05 completes. Remaining combos after that point will NOT run automatically in this session.
+[2026-07-13 13:53:22] Batch scheme: ALL combinations use 30 batches (no overrides active). Confirmed per updated instructor requirement.
+[2026-07-13 13:53:22] H1 EXPERIMENT STARTED (or resumed)
+[2026-07-13 13:53:22] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
+[2026-07-13 13:53:22] N=50000 churn=0.01: has 15 batches, need 15 more to reach 30.
+[2026-07-13 13:53:22] === STARTING N=50000 churn=0.01 | standard (30 batches) ===

@@ -17,6 +17,9 @@ exactly 7 combinations and 30 batches per combination. For previously
 completed 15-batch combinations, the script automatically supplements them
 with 15 more batches (reconstructing graph/ICC state without re-timing),
 rather than re-running from scratch.
+
+Features:
+  - Controlled auto-stop: stops cleanly after a configured combination finishes.
 """
 
 from __future__ import annotations
@@ -68,6 +71,16 @@ OFFICIAL_COMBINATIONS = [
     (50_000, 0.10),
     (100_000, 0.05),  # ONLY this combo at N=100,000 per official spec
 ]
+
+# ============================================================
+# TO RESUME REMAINING COMBOS TOMORROW: change the line below to
+#   AUTO_STOP_AFTER_COMBO = None
+# then simply re-run: python experiments/run_h1.py
+# It will skip all completed combos (including N=50,000 churn=0.05
+# which will be auto-stopped-at today) and continue with:
+#   N=50,000 churn=0.10, then N=100,000 churn=0.05
+# ============================================================
+AUTO_STOP_AFTER_COMBO = (50_000, 0.05)
 
 
 def get_n_batches(N: int, churn_rate: float) -> int:
@@ -322,6 +335,14 @@ def run_h1_experiment() -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
     session_start = datetime.datetime.now()
 
+    # Print auto-stop notice at start
+    if AUTO_STOP_AFTER_COMBO is not None:
+        log_live(
+            f"NOTE: Auto-stop is configured to trigger after "
+            f"N={AUTO_STOP_AFTER_COMBO[0]} churn={AUTO_STOP_AFTER_COMBO[1]} completes. "
+            f"Remaining combos after that point will NOT run automatically in this session."
+        )
+
     # -----------------------------------------------------------------------
     # Checkpoint / resume guard
     # -----------------------------------------------------------------------
@@ -458,6 +479,22 @@ def run_h1_experiment() -> None:
                 f"\n  [SKIP] N={N:,} churn={churn_rate*100:.0f}% "
                 f"— already completed ({existing_count} batches)."
             )
+            
+            # Auto-stop check for skipped combo
+            if AUTO_STOP_AFTER_COMBO is not None and (N, churn_rate) == AUTO_STOP_AFTER_COMBO:
+                log_live(
+                    f"=== AUTO-STOP TRIGGERED: N={N} churn={churn_rate} is already "
+                    f"completed, which is the configured stop point (AUTO_STOP_AFTER_COMBO). ==="
+                )
+                remaining_list = [c for c in OFFICIAL_COMBINATIONS if f"{c[0]}_{c[1]}" not in combo_batch_counts]
+                log_live(f"Remaining combinations NOT YET started: {remaining_list}")
+                log_live("=== EXPERIMENT PAUSED (clean auto-stop, not a crash) ===")
+                print("\n" + "=" * 70)
+                print("AUTO-STOP: Configured stopping point was already finished.")
+                print("Script is exiting cleanly. Data is fully saved.")
+                print("=" * 70)
+                sys.exit(0)
+                
             continue
 
         batches_needed = N_BATCHES_DEFAULT - existing_count
@@ -731,6 +768,27 @@ def run_h1_experiment() -> None:
                 f"appended to CSVs; checkpoint updated "
                 f"({len(combo_batch_counts)}/7 combos done)."
             )
+
+            # Controlled auto-stop check
+            if AUTO_STOP_AFTER_COMBO is not None and (N, churn_rate) == AUTO_STOP_AFTER_COMBO:
+                log_live(
+                    f"=== AUTO-STOP TRIGGERED: Just finished N={N} churn={churn_rate}, "
+                    f"which is the configured stop point (AUTO_STOP_AFTER_COMBO). ==="
+                )
+                remaining_list = [c for c in OFFICIAL_COMBINATIONS if f"{c[0]}_{c[1]}" not in combo_batch_counts]
+                log_live(f"Remaining combinations NOT YET started: {remaining_list}")
+                log_live("To resume, either:")
+                log_live("  (a) Set AUTO_STOP_AFTER_COMBO = None in this script and re-run to process all remaining combos, or")
+                log_live("  (b) Change AUTO_STOP_AFTER_COMBO to a later combo if you want another controlled stopping point, or")
+                log_live("  (c) Just re-run as-is if you've already set AUTO_STOP_AFTER_COMBO = None — it will resume from the checkpoint automatically.")
+                log_live("=== EXPERIMENT PAUSED (clean auto-stop, not a crash) ===")
+                print("\n" + "=" * 70)
+                print("AUTO-STOP: Finished the configured stopping point combo.")
+                print("Script is exiting cleanly. Data is fully saved.")
+                print("To continue with remaining combinations, set")
+                print("AUTO_STOP_AFTER_COMBO = None and re-run this script.")
+                print("=" * 70)
+                sys.exit(0)
 
         except KeyboardInterrupt:
             print(
