@@ -1,2 +1,10 @@
 N,failure_rate,n_valid_runs,mean_steps_closeness,mean_steps_degree,median_steps_closeness,median_steps_degree,pct_closeness_faster,pct_same_node,closeness_censored_pct,degree_censored_pct,test_used,test_statistic,p_value,significant,h4_verdict
-200,0.1,5,501.0,501.0,501.0,501.0,0.0,100.0,100.0,100.0,Independent T-Test,,,False,REJECTED_DEGREE_FASTER
+1000,0.05,50,501.0,501.0,501.0,501.0,0.0,32.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+1000,0.1,50,501.0,501.0,501.0,501.0,0.0,40.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+1000,0.2,50,501.0,501.0,501.0,501.0,0.0,64.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+5000,0.05,50,501.0,501.0,501.0,501.0,0.0,34.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+5000,0.1,50,501.0,501.0,501.0,501.0,0.0,52.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+5000,0.2,50,501.0,501.0,501.0,501.0,0.0,68.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+10000,0.05,50,501.0,501.0,501.0,501.0,0.0,100.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+10000,0.1,50,501.0,501.0,501.0,501.0,0.0,100.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
+10000,0.2,50,501.0,501.0,501.0,501.0,0.0,94.0,100.0,100.0,Mann-Whitney U,1250.0,1.0,False,REJECTED_NOT_SIGNIFICANT
