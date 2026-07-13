@@ -183,3 +183,18 @@
 [2026-07-13 13:53:22] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
 [2026-07-13 13:53:22] N=50000 churn=0.01: has 15 batches, need 15 more to reach 30.
 [2026-07-13 13:53:22] === STARTING N=50000 churn=0.01 | standard (30 batches) ===
+[2026-07-13 14:01:06] Replaying 15 previously-measured batches to reconstruct graph/ICC state (not re-timed)...
+[2026-07-13 16:45:02] N=50000 churn=0.01 batch=16/30 | FR=146.6s | ICC=622.4s (n_affected=40,066/50,000=80.1%) | batch_total=769.0s | est. sisa kombinasi ini: ~2.99 jam
+[2026-07-13 16:57:45] N=50000 churn=0.01 batch=17/30 | FR=149.5s | ICC=601.6s (n_affected=39,732/50,000=79.5%) | batch_total=751.0s | est. sisa kombinasi ini: ~2.74 jam
+[2026-07-13 17:10:42] N=50000 churn=0.01 batch=18/30 | FR=167.9s | ICC=596.4s (n_affected=39,272/50,000=78.5%) | batch_total=764.3s | est. sisa kombinasi ini: ~2.54 jam
+[2026-07-13 17:23:19] N=50000 churn=0.01 batch=19/30 | FR=151.6s | ICC=593.3s (n_affected=39,128/50,000=78.3%) | batch_total=745.0s | est. sisa kombinasi ini: ~2.31 jam
+[2026-07-13 17:36:32] N=50000 churn=0.01 batch=20/30 | FR=155.4s | ICC=625.2s (n_affected=40,982/50,000=82.0%) | batch_total=780.6s | est. sisa kombinasi ini: ~2.12 jam
+[2026-07-13 17:49:23] N=50000 churn=0.01 batch=21/30 | FR=148.1s | ICC=610.2s (n_affected=40,167/50,000=80.3%) | batch_total=758.3s | est. sisa kombinasi ini: ~1.90 jam
+[2026-07-13 18:02:16] N=50000 churn=0.01 batch=22/30 | FR=150.3s | ICC=610.6s (n_affected=40,215/50,000=80.4%) | batch_total=760.9s | est. sisa kombinasi ini: ~1.69 jam
+[2026-07-13 18:15:23] N=50000 churn=0.01 batch=23/30 | FR=151.8s | ICC=622.2s (n_affected=40,750/50,000=81.5%) | batch_total=774.0s | est. sisa kombinasi ini: ~1.48 jam
+[2026-07-13 18:28:23] N=50000 churn=0.01 batch=24/30 | FR=155.7s | ICC=611.5s (n_affected=40,185/50,000=80.4%) | batch_total=767.2s | est. sisa kombinasi ini: ~1.27 jam
+[2026-07-13 18:41:39] N=50000 churn=0.01 batch=25/30 | FR=156.3s | ICC=626.2s (n_affected=40,416/50,000=80.8%) | batch_total=782.4s | est. sisa kombinasi ini: ~1.06 jam
+[2026-07-13 18:54:47] N=50000 churn=0.01 batch=26/30 | FR=151.4s | ICC=623.3s (n_affected=40,817/50,000=81.6%) | batch_total=774.7s | est. sisa kombinasi ini: ~0.85 jam
+[2026-07-13 19:08:14] N=50000 churn=0.01 batch=27/30 | FR=158.3s | ICC=636.1s (n_affected=41,126/50,000=82.3%) | batch_total=794.4s | est. sisa kombinasi ini: ~0.64 jam
+[2026-07-13 19:21:14] N=50000 churn=0.01 batch=28/30 | FR=156.2s | ICC=610.5s (n_affected=39,952/50,000=79.9%) | batch_total=766.7s | est. sisa kombinasi ini: ~0.43 jam
+[2026-07-13 19:34:36] N=50000 churn=0.01 batch=29/30 | FR=156.2s | ICC=632.4s (n_affected=41,137/50,000=82.3%) | batch_total=788.6s | est. sisa kombinasi ini: ~0.21 jam
