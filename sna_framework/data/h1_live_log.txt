@@ -198,3 +198,36 @@
 [2026-07-13 19:08:14] N=50000 churn=0.01 batch=27/30 | FR=158.3s | ICC=636.1s (n_affected=41,126/50,000=82.3%) | batch_total=794.4s | est. sisa kombinasi ini: ~0.64 jam
 [2026-07-13 19:21:14] N=50000 churn=0.01 batch=28/30 | FR=156.2s | ICC=610.5s (n_affected=39,952/50,000=79.9%) | batch_total=766.7s | est. sisa kombinasi ini: ~0.43 jam
 [2026-07-13 19:34:36] N=50000 churn=0.01 batch=29/30 | FR=156.2s | ICC=632.4s (n_affected=41,137/50,000=82.3%) | batch_total=788.6s | est. sisa kombinasi ini: ~0.21 jam
+[2026-07-13 19:48:22] N=50000 churn=0.01 batch=30/30 | FR=163.8s | ICC=648.0s (n_affected=41,556/50,000=83.1%) | batch_total=811.8s | est. sisa kombinasi ini: ~0.00 jam
+[2026-07-13 19:48:22] === FINISHED N=50000 churn=0.01 | session_added_batches=15 | avg_batch=772.6s | mean_efficiency_pct=-302.2% ===
+[2026-07-13 19:48:22] N=50000 churn=0.05: has 15 batches, need 15 more to reach 30.
+[2026-07-13 19:48:22] === STARTING N=50000 churn=0.05 | standard (30 batches) ===
+[2026-07-13 19:56:18] Replaying 15 previously-measured batches to reconstruct graph/ICC state (not re-timed)...
+[2026-07-13 23:43:46] N=50000 churn=0.05 batch=16/30 | FR=199.8s | ICC=800.3s (n_affected=49,963/50,000=99.9%) | batch_total=1000.1s | est. sisa kombinasi ini: ~3.89 jam
+[2026-07-14 00:02:07] N=50000 churn=0.05 batch=17/30 | FR=204.2s | ICC=803.1s (n_affected=49,963/50,000=99.9%) | batch_total=1007.3s | est. sisa kombinasi ini: ~3.62 jam
+[2026-07-14 00:20:50] N=50000 churn=0.05 batch=18/30 | FR=211.1s | ICC=812.6s (n_affected=49,979/50,000=100.0%) | batch_total=1023.6s | est. sisa kombinasi ini: ~3.37 jam
+[2026-07-14 00:39:35] N=50000 churn=0.05 batch=19/30 | FR=211.3s | ICC=811.4s (n_affected=49,988/50,000=100.0%) | batch_total=1022.6s | est. sisa kombinasi ini: ~3.10 jam
+[2026-07-14 00:58:29] N=50000 churn=0.05 batch=20/30 | FR=211.9s | ICC=815.5s (n_affected=49,993/50,000=100.0%) | batch_total=1027.4s | est. sisa kombinasi ini: ~2.82 jam
+[2026-07-14 01:17:30] N=50000 churn=0.05 batch=21/30 | FR=214.2s | ICC=816.6s (n_affected=49,996/50,000=100.0%) | batch_total=1030.8s | est. sisa kombinasi ini: ~2.55 jam
+[2026-07-14 01:36:49] N=50000 churn=0.05 batch=22/30 | FR=219.5s | ICC=822.3s (n_affected=49,991/50,000=100.0%) | batch_total=1041.8s | est. sisa kombinasi ini: ~2.27 jam
+[2026-07-14 01:56:13] N=50000 churn=0.05 batch=23/30 | FR=218.9s | ICC=826.0s (n_affected=49,996/50,000=100.0%) | batch_total=1044.9s | est. sisa kombinasi ini: ~1.99 jam
+[2026-07-14 02:15:49] N=50000 churn=0.05 batch=24/30 | FR=221.7s | ICC=831.3s (n_affected=49,999/50,000=100.0%) | batch_total=1053.0s | est. sisa kombinasi ini: ~1.71 jam
+[2026-07-14 02:35:43] N=50000 churn=0.05 batch=25/30 | FR=228.9s | ICC=839.3s (n_affected=49,999/50,000=100.0%) | batch_total=1068.2s | est. sisa kombinasi ini: ~1.43 jam
+[2026-07-14 02:55:46] N=50000 churn=0.05 batch=26/30 | FR=232.2s | ICC=838.8s (n_affected=49,999/50,000=100.0%) | batch_total=1071.0s | est. sisa kombinasi ini: ~1.15 jam
+[2026-07-14 03:16:08] N=50000 churn=0.05 batch=27/30 | FR=240.1s | ICC=844.9s (n_affected=50,000/50,000=100.0%) | batch_total=1085.0s | est. sisa kombinasi ini: ~0.87 jam
+[2026-07-14 03:36:52] N=50000 churn=0.05 batch=28/30 | FR=248.5s | ICC=852.0s (n_affected=50,000/50,000=100.0%) | batch_total=1100.5s | est. sisa kombinasi ini: ~0.58 jam
+[2026-07-14 03:57:47] N=50000 churn=0.05 batch=29/30 | FR=250.4s | ICC=851.6s (n_affected=49,999/50,000=100.0%) | batch_total=1102.0s | est. sisa kombinasi ini: ~0.29 jam
+[2026-07-14 04:19:06] N=50000 churn=0.05 batch=30/30 | FR=262.9s | ICC=857.1s (n_affected=50,000/50,000=100.0%) | batch_total=1119.9s | est. sisa kombinasi ini: ~0.00 jam
+[2026-07-14 04:19:06] === FINISHED N=50000 churn=0.05 | session_added_batches=15 | avg_batch=1053.2s | mean_efficiency_pct=-315.8% ===
+[2026-07-14 04:19:06] === AUTO-STOP TRIGGERED: Just finished N=50000 churn=0.05, which is the configured stop point (AUTO_STOP_AFTER_COMBO). ===
+[2026-07-14 04:19:06] Remaining combinations NOT YET started: [(100000, 0.05)]
+[2026-07-14 04:19:06] To resume, either:
+[2026-07-14 04:19:06]   (a) Set AUTO_STOP_AFTER_COMBO = None in this script and re-run to process all remaining combos, or
+[2026-07-14 04:19:06]   (b) Change AUTO_STOP_AFTER_COMBO to a later combo if you want another controlled stopping point, or
+[2026-07-14 04:19:06]   (c) Just re-run as-is if you've already set AUTO_STOP_AFTER_COMBO = None — it will resume from the checkpoint automatically.
+[2026-07-14 04:19:06] === EXPERIMENT PAUSED (clean auto-stop, not a crash) ===
+[2026-07-14 04:40:55] Batch scheme: ALL combinations use 30 batches (no overrides active). Confirmed per updated instructor requirement.
+[2026-07-14 04:40:55] H1 EXPERIMENT STARTED (or resumed)
+[2026-07-14 04:40:55] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
+[2026-07-14 04:40:55] N=50000 churn=0.1: has 15 batches, need 15 more to reach 30.
+[2026-07-14 04:40:55] === STARTING N=50000 churn=0.1 | standard (30 batches) ===

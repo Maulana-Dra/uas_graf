@@ -80,7 +80,7 @@ OFFICIAL_COMBINATIONS = [
 # which will be auto-stopped-at today) and continue with:
 #   N=50,000 churn=0.10, then N=100,000 churn=0.05
 # ============================================================
-AUTO_STOP_AFTER_COMBO = (50_000, 0.05)
+AUTO_STOP_AFTER_COMBO = None
 
 
 def get_n_batches(N: int, churn_rate: float) -> int:
