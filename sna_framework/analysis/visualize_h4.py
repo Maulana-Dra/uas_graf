@@ -122,13 +122,13 @@ def _fig_steps_boxplot(df_raw: pd.DataFrame, out_path: Path) -> None:
             bp = ax.boxplot(
                 [data_c, data_d],
                 patch_artist=True,
-                labels=["Closeness", "Degree"],
                 boxprops=dict(linewidth=1.5),
                 medianprops=dict(color="black", linewidth=2),
                 whiskerprops=dict(linewidth=1.5),
                 capprops=dict(linewidth=1.5),
                 flierprops=dict(marker="o", markersize=3, alpha=0.5),
             )
+            ax.set_xticklabels(["Closeness", "Degree"])
             bp["boxes"][0].set_facecolor(COLOR_CL)
             bp["boxes"][0].set_alpha(0.7)
             if len(bp["boxes"]) > 1:
