@@ -340,6 +340,52 @@ def _fig_pvalue_significance(df_sum: pd.DataFrame, out_path: Path) -> None:
     print(f"  Saved: {out_path.name}")
 
 
+def _fig_same_node_pct(df_sum: pd.DataFrame, out_path: Path) -> None:
+    """Generate same_node percentage bar chart per N and failure_rate."""
+    fig, ax = plt.subplots(figsize=(8, 5))
+    
+    N_vals = sorted(df_sum["N"].unique())
+    fr_vals = sorted(df_sum["failure_rate"].unique())
+    
+    x = np.arange(len(N_vals))
+    width = 0.25
+    
+    colors = ["#7fcdbb", "#41b6c4", "#081d58"]
+    
+    for i, fr in enumerate(fr_vals):
+        pcts = []
+        for N in N_vals:
+            sub = df_sum[(df_sum["N"] == N) & (df_sum["failure_rate"] == fr)]
+            if len(sub) > 0:
+                pcts.append(sub["pct_same_node"].iloc[0])
+            else:
+                pcts.append(0.0)
+        ax.bar(x + (i - 1) * width, pcts, width, label=f"Fail {int(fr*100)}%", color=colors[i])
+        
+    ax.set_xlabel("Ukuran Graf (N)", fontsize=11)
+    ax.set_ylabel("Persentase Seed Sama (%)", fontsize=11)
+    ax.set_title("H4: Persentase Tumpang Tindih Seed (Closeness == Degree)", fontsize=12, fontweight="bold")
+    ax.set_xticks(x)
+    ax.set_xticklabels([f"N={int(N):,}" for N in N_vals], fontsize=10)
+    ax.set_ylim(0, 110)
+    ax.legend(title="Tingkat Kegagalan", loc="upper left")
+    
+    # Add labels on top of the bars
+    for p in ax.patches:
+        height = p.get_height()
+        if height > 0:
+            ax.annotate(f"{height:.0f}%",
+                        xy=(p.get_x() + p.get_width() / 2, height),
+                        xytext=(0, 3),  # 3 points vertical offset
+                        textcoords="offset points",
+                        ha='center', va='bottom', fontsize=9)
+            
+    fig.tight_layout()
+    fig.savefig(out_path, bbox_inches="tight", dpi=150)
+    plt.close("all")
+    print(f"  Saved: {out_path.name}")
+
+
 # ---------------------------------------------------------------------------
 # Public entry point
 # ---------------------------------------------------------------------------
@@ -349,7 +395,7 @@ def plot_h4_all(
     summary_path: Path | str,
     out_dir: Path | str,
 ) -> None:
-    """Generate all 4 H4 figures and save to out_dir.
+    """Generate all H4 figures and save to out_dir.
 
     Parameters
     ----------
@@ -372,6 +418,8 @@ def plot_h4_all(
         ("h4_closeness_faster_pct.png", _fig_closeness_faster_pct,
          {"df_sum": df_sum}),
         ("h4_pvalue_significance.png", _fig_pvalue_significance,
+         {"df_sum": df_sum}),
+        ("h4_same_node_pct.png", _fig_same_node_pct,
          {"df_sum": df_sum}),
     ]:
         try:

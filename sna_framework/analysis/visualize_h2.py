@@ -96,8 +96,8 @@ def _fig_pearson_scatter(out_path: Path, n_scatter: int = 2_000) -> None:
         )
         return
 
-    # Use N=10,000 as representative (faster than 50k, still illustrative)
-    N_REP = 10_000
+    # Use N=50,000 as representative (matching the first scale of the H2 methodology)
+    N_REP = 50_000
     SEED = 42
     print(
         f"  Generating representative scatter (N={N_REP:,}, seed={SEED})...\n"
