@@ -196,9 +196,15 @@ class LandmarkApproximation:
                 sum_dist / np.maximum(reachable_count, 1),
                 0.0
             )
-            # Scale calculation
-            # score = (n - 1) / (avg_landmark_dist * n / reachable_count)
-            denom = avg_landmark_dist * self.n / np.maximum(reachable_count, 1)
+            # FIXED 2026-07-14: Previous formula divided by reachable_count twice 
+            # (once implicitly via avg_landmark_dist being an average, once 
+            # explicitly in the denom calculation), causing scores to be 
+            # inflated by a factor of k (landmark count) compared to true 
+            # closeness centrality scale. This did not affect Pearson 
+            # correlation (scale-invariant) but severely distorted RMSE/NRMSE, 
+            # which are required metrics per the exam specification. Verified 
+            # via independent mathematical derivation before applying this fix.
+            denom = avg_landmark_dist * self.n
             scores = np.where(
                 (reachable_count > 0) & (denom > 0),
                 (self.n - 1) / np.maximum(denom, 1e-10),
