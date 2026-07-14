@@ -276,3 +276,11 @@ def print_h4_verdict(df: pd.DataFrame) -> None:
             "(>30%). Node hub BA mendominasi kedua metrik — "
             "catat sebagai limitasi metodologi."
         )
+
+
+if __name__ == "__main__":
+    import os
+    raw_csv = os.path.join("data", "h4_raw.csv")
+    summary_csv = os.path.join("data", "h4_summary.csv")
+    df = run_stats_h4(raw_csv, summary_csv)
+    print_h4_verdict(df)
