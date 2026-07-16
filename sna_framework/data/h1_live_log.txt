@@ -270,3 +270,5 @@
 [2026-07-16 15:38:32] N=100000 churn=0.05 batch=1/30 | FR=906.8s | ICC=3566.4s (n_affected=98,360/100,000=98.4%) | batch_total=4473.2s | est. sisa kombinasi ini: ~36.03 jam
 [2026-07-16 16:59:26] N=100000 churn=0.05 batch=2/30 | FR=920.8s | ICC=3686.5s (n_affected=98,537/100,000=98.5%) | batch_total=4607.3s | est. sisa kombinasi ini: ~35.31 jam
 [2026-07-16 18:13:03] N=100000 churn=0.05 batch=3/30 | FR=885.4s | ICC=3291.0s (n_affected=98,795/100,000=98.8%) | batch_total=4176.4s | est. sisa kombinasi ini: ~33.14 jam
+[2026-07-16 19:28:29] N=100000 churn=0.05 batch=4/30 | FR=911.6s | ICC=3344.0s (n_affected=98,904/100,000=98.9%) | batch_total=4255.6s | est. sisa kombinasi ini: ~31.62 jam
+[2026-07-16 20:50:15] N=100000 churn=0.05 batch=5/30 | FR=1173.3s | ICC=3466.0s (n_affected=99,112/100,000=99.1%) | batch_total=4639.3s | est. sisa kombinasi ini: ~30.77 jam

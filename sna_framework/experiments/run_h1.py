@@ -68,20 +68,20 @@ OFFICIAL_COMBINATIONS = [
     (10_000, 0.10),
     (50_000, 0.01),
     (50_000, 0.05),
-    (100_000, 0.05),  # ONLY this combo at N=100,000 per official spec - run first per user request
-    (50_000, 0.10),
+    (50_000, 0.10),  # Run this first per user request
+    (100_000, 0.05),  # ONLY this combo at N=100,000 per official spec
 ]
 
 # ============================================================
-# TO RESUME N=50,000 churn=0.10 LATER: change the line below to
+# TO RESUME N=100,000 churn=0.05 LATER: change the line below to
 #   AUTO_STOP_AFTER_COMBO = None
 # then simply re-run: python experiments/run_h1.py
 # It will skip all completed combos and continue with the final
-# remaining combination: N=50,000 churn=0.10
+# remaining combination: N=100,000 churn=0.05
 # ============================================================
-AUTO_STOP_AFTER_COMBO = (100_000, 0.05)  # Stop gracefully right
+AUTO_STOP_AFTER_COMBO = (50_000, 0.10)  # Stop gracefully right
 # after this combination completes, before starting the remaining
-# batches of N=50,000 churn=0.10. Set to None to disable auto-stop
+# batches of N=100,000 churn=0.05. Set to None to disable auto-stop
 # and run all remaining combinations continuously.
 
 
