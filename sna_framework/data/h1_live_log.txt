@@ -231,3 +231,33 @@
 [2026-07-14 04:40:55] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
 [2026-07-14 04:40:55] N=50000 churn=0.1: has 15 batches, need 15 more to reach 30.
 [2026-07-14 04:40:55] === STARTING N=50000 churn=0.1 | standard (30 batches) ===
+[2026-07-14 20:07:11] Batch scheme: ALL combinations use 30 batches (no overrides active). Confirmed per updated instructor requirement.
+[2026-07-14 20:07:11] H1 EXPERIMENT STARTED (or resumed)
+[2026-07-14 20:07:11] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
+[2026-07-14 20:07:11] N=50000 churn=0.1: has 15 batches, need 15 more to reach 30.
+[2026-07-14 20:07:11] === STARTING N=50000 churn=0.1 | standard (30 batches) ===
+[2026-07-14 20:16:05] Replaying 15 previously-measured batches to reconstruct graph/ICC state (not re-timed)...
+[2026-07-15 10:10:48] NOTE: Auto-stop is configured to trigger after N=50000 churn=0.1 completes. N=100,000 churn=0.05 will NOT run automatically in this session — it will be deferred until AUTO_STOP_AFTER_COMBO is set to None.
+[2026-07-15 10:10:48] Batch scheme: ALL combinations use 30 batches (no overrides active). Confirmed per updated instructor requirement.
+[2026-07-15 10:10:48] H1 EXPERIMENT STARTED (or resumed)
+[2026-07-15 10:10:48] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
+[2026-07-15 10:10:48] N=50000 churn=0.1: has 15 batches, need 15 more to reach 30.
+[2026-07-15 10:10:48] === STARTING N=50000 churn=0.1 | standard (30 batches) ===
+[2026-07-15 10:19:54] Replaying 15 previously-measured batches to reconstruct graph/ICC state (not re-timed)...
+[2026-07-15 15:01:43] N=50000 churn=0.1 batch=16/30 | FR=280.5s | ICC=893.2s (n_affected=50,000/50,000=100.0%) | batch_total=1173.8s | est. sisa kombinasi ini: ~4.56 jam
+[2026-07-15 15:27:36] N=50000 churn=0.1 batch=17/30 | FR=295.4s | ICC=910.7s (n_affected=50,000/50,000=100.0%) | batch_total=1206.1s | est. sisa kombinasi ini: ~4.30 jam
+[2026-07-15 15:53:46] N=50000 churn=0.1 batch=18/30 | FR=309.7s | ICC=911.0s (n_affected=50,000/50,000=100.0%) | batch_total=1220.8s | est. sisa kombinasi ini: ~4.00 jam
+[2026-07-15 16:20:22] N=50000 churn=0.1 batch=19/30 | FR=323.6s | ICC=922.6s (n_affected=50,000/50,000=100.0%) | batch_total=1246.3s | est. sisa kombinasi ini: ~3.70 jam
+[2026-07-15 16:47:42] N=50000 churn=0.1 batch=20/30 | FR=334.6s | ICC=938.3s (n_affected=50,000/50,000=100.0%) | batch_total=1272.9s | est. sisa kombinasi ini: ~3.40 jam
+[2026-07-15 17:16:00] N=50000 churn=0.1 batch=21/30 | FR=352.6s | ICC=952.9s (n_affected=50,000/50,000=100.0%) | batch_total=1305.5s | est. sisa kombinasi ini: ~3.09 jam
+[2026-07-15 20:25:14] NOTE: Auto-stop is configured to trigger after N=50000 churn=0.1 completes. N=100,000 churn=0.05 will NOT run automatically in this session — it will be deferred until AUTO_STOP_AFTER_COMBO is set to None.
+[2026-07-15 20:25:14] Batch scheme: ALL combinations use 30 batches (no overrides active). Confirmed per updated instructor requirement.
+[2026-07-15 20:25:14] H1 EXPERIMENT STARTED (or resumed)
+[2026-07-15 20:25:14] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
+[2026-07-15 20:25:14] N=50000 churn=0.1: has 21 batches, need 9 more to reach 30.
+[2026-07-15 20:25:14] === STARTING N=50000 churn=0.1 | standard (30 batches) ===
+[2026-07-15 20:34:49] Replaying 21 previously-measured batches to reconstruct graph/ICC state (not re-timed)...
+[2026-07-16 03:17:44] N=50000 churn=0.1 batch=22/30 | FR=401.9s | ICC=980.0s (n_affected=50,000/50,000=100.0%) | batch_total=1381.9s | est. sisa kombinasi ini: ~3.07 jam
+[2026-07-16 03:47:58] N=50000 churn=0.1 batch=23/30 | FR=379.6s | ICC=983.1s (n_affected=50,000/50,000=100.0%) | batch_total=1362.7s | est. sisa kombinasi ini: ~2.67 jam
+[2026-07-16 04:20:37] N=50000 churn=0.1 batch=24/30 | FR=393.3s | ICC=1054.5s (n_affected=50,000/50,000=100.0%) | batch_total=1447.8s | est. sisa kombinasi ini: ~2.33 jam
+[2026-07-16 04:52:55] N=50000 churn=0.1 batch=25/30 | FR=418.2s | ICC=1009.9s (n_affected=50,000/50,000=100.0%) | batch_total=1428.1s | est. sisa kombinasi ini: ~1.95 jam

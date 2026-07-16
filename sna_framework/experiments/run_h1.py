@@ -68,19 +68,21 @@ OFFICIAL_COMBINATIONS = [
     (10_000, 0.10),
     (50_000, 0.01),
     (50_000, 0.05),
+    (100_000, 0.05),  # ONLY this combo at N=100,000 per official spec - run first per user request
     (50_000, 0.10),
-    (100_000, 0.05),  # ONLY this combo at N=100,000 per official spec
 ]
 
 # ============================================================
-# TO RESUME REMAINING COMBOS TOMORROW: change the line below to
+# TO RESUME N=50,000 churn=0.10 LATER: change the line below to
 #   AUTO_STOP_AFTER_COMBO = None
 # then simply re-run: python experiments/run_h1.py
-# It will skip all completed combos (including N=50,000 churn=0.05
-# which will be auto-stopped-at today) and continue with:
-#   N=50,000 churn=0.10, then N=100,000 churn=0.05
+# It will skip all completed combos and continue with the final
+# remaining combination: N=50,000 churn=0.10
 # ============================================================
-AUTO_STOP_AFTER_COMBO = None
+AUTO_STOP_AFTER_COMBO = (100_000, 0.05)  # Stop gracefully right
+# after this combination completes, before starting the remaining
+# batches of N=50,000 churn=0.10. Set to None to disable auto-stop
+# and run all remaining combinations continuously.
 
 
 def get_n_batches(N: int, churn_rate: float) -> int:
@@ -252,6 +254,25 @@ def _save_checkpoint(combo_batch_counts: dict[str, int]) -> None:
         json.dump(checkpoint, f, indent=2)
 
 
+def get_checkpoint_completed_combos() -> list[tuple[int, float]]:
+    """Return list of (N, churn_rate) combinations that are fully completed (>= 30 batches)."""
+    checkpoint = _load_checkpoint()
+    if not checkpoint:
+        return []
+    completed = []
+    combo_batch_counts = checkpoint.get("combo_batch_counts", {})
+    for key, count in combo_batch_counts.items():
+        if count >= N_BATCHES_DEFAULT:
+            try:
+                parts = key.split("_")
+                N = int(parts[0])
+                churn_rate = float(parts[1])
+                completed.append((N, churn_rate))
+            except Exception:
+                pass
+    return completed
+
+
 def _append_raw_rows(raw_rows: list[dict], raw_columns: list[str]) -> None:
     """Append raw batch rows to h1_raw.csv (write header only if new file)."""
     if not raw_rows:
@@ -337,11 +358,19 @@ def run_h1_experiment() -> None:
 
     # Print auto-stop notice at start
     if AUTO_STOP_AFTER_COMBO is not None:
-        log_live(
-            f"NOTE: Auto-stop is configured to trigger after "
-            f"N={AUTO_STOP_AFTER_COMBO[0]} churn={AUTO_STOP_AFTER_COMBO[1]} completes. "
-            f"Remaining combos after that point will NOT run automatically in this session."
-        )
+        log_live(f"NOTE: Auto-stop is configured to trigger after "
+                 f"N={AUTO_STOP_AFTER_COMBO[0]} churn={AUTO_STOP_AFTER_COMBO[1]} "
+                 f"completes. N=100,000 churn=0.05 will NOT run "
+                 f"automatically in this session — it will be deferred "
+                 f"until AUTO_STOP_AFTER_COMBO is set to None.")
+        
+        # Edge case: check if target stop point is already completed
+        completed = get_checkpoint_completed_combos()
+        if AUTO_STOP_AFTER_COMBO in completed:
+            log_live(f"AUTO_STOP_AFTER_COMBO ({AUTO_STOP_AFTER_COMBO}) is "
+                     f"already completed per checkpoint. Nothing to run "
+                     f"in this session — exiting immediately.")
+            sys.exit(0)
 
     # -----------------------------------------------------------------------
     # Checkpoint / resume guard
@@ -771,22 +800,22 @@ def run_h1_experiment() -> None:
 
             # Controlled auto-stop check
             if AUTO_STOP_AFTER_COMBO is not None and (N, churn_rate) == AUTO_STOP_AFTER_COMBO:
-                log_live(
-                    f"=== AUTO-STOP TRIGGERED: Just finished N={N} churn={churn_rate}, "
-                    f"which is the configured stop point (AUTO_STOP_AFTER_COMBO). ==="
-                )
-                remaining_list = [c for c in OFFICIAL_COMBINATIONS if f"{c[0]}_{c[1]}" not in combo_batch_counts]
-                log_live(f"Remaining combinations NOT YET started: {remaining_list}")
-                log_live("To resume, either:")
-                log_live("  (a) Set AUTO_STOP_AFTER_COMBO = None in this script and re-run to process all remaining combos, or")
-                log_live("  (b) Change AUTO_STOP_AFTER_COMBO to a later combo if you want another controlled stopping point, or")
-                log_live("  (c) Just re-run as-is if you've already set AUTO_STOP_AFTER_COMBO = None — it will resume from the checkpoint automatically.")
-                log_live("=== EXPERIMENT PAUSED (clean auto-stop, not a crash) ===")
+                remaining = [c for c in OFFICIAL_COMBINATIONS 
+                             if c not in get_checkpoint_completed_combos()]
+                log_live(f"=== AUTO-STOP TRIGGERED: Just finished N={N} "
+                         f"churn={churn_rate}, which is the configured stop "
+                         f"point (AUTO_STOP_AFTER_COMBO). ===")
+                log_live(f"All N=50,000 combinations are now complete.")
+                log_live(f"Remaining combinations NOT YET started: {remaining}")
+                log_live(f"To resume and process N=100,000 churn=0.05:")
+                log_live(f"  Set AUTO_STOP_AFTER_COMBO = None in this script "
+                         f"and re-run: python experiments/run_h1.py")
+                log_live(f"=== EXPERIMENT PAUSED (clean auto-stop, not a crash) ===")
                 print("\n" + "=" * 70)
-                print("AUTO-STOP: Finished the configured stopping point combo.")
+                print("AUTO-STOP: All N=50,000 combinations finished successfully.")
                 print("Script is exiting cleanly. Data is fully saved.")
-                print("To continue with remaining combinations, set")
-                print("AUTO_STOP_AFTER_COMBO = None and re-run this script.")
+                print("Remaining: N=100,000 churn=0.05 (deferred to next session).")
+                print("To continue, set AUTO_STOP_AFTER_COMBO = None and re-run.")
                 print("=" * 70)
                 sys.exit(0)
 
