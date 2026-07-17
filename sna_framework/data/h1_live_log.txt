@@ -272,3 +272,27 @@
 [2026-07-16 18:13:03] N=100000 churn=0.05 batch=3/30 | FR=885.4s | ICC=3291.0s (n_affected=98,795/100,000=98.8%) | batch_total=4176.4s | est. sisa kombinasi ini: ~33.14 jam
 [2026-07-16 19:28:29] N=100000 churn=0.05 batch=4/30 | FR=911.6s | ICC=3344.0s (n_affected=98,904/100,000=98.9%) | batch_total=4255.6s | est. sisa kombinasi ini: ~31.62 jam
 [2026-07-16 20:50:15] N=100000 churn=0.05 batch=5/30 | FR=1173.3s | ICC=3466.0s (n_affected=99,112/100,000=99.1%) | batch_total=4639.3s | est. sisa kombinasi ini: ~30.77 jam
+[2026-07-16 22:32:39] NOTE: Auto-stop is configured to trigger after N=50000 churn=0.1 completes. N=100,000 churn=0.05 will NOT run automatically in this session — it will be deferred until AUTO_STOP_AFTER_COMBO is set to None.
+[2026-07-16 22:32:39] Batch scheme: ALL combinations use 30 batches (no overrides active). Confirmed per updated instructor requirement.
+[2026-07-16 22:32:39] H1 EXPERIMENT STARTED (or resumed)
+[2026-07-16 22:32:39] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
+[2026-07-16 22:32:39] N=50000 churn=0.1: has 25 batches, need 5 more to reach 30.
+[2026-07-16 22:32:39] === STARTING N=50000 churn=0.1 | standard (30 batches) ===
+[2026-07-16 22:41:56] Replaying 25 previously-measured batches to reconstruct graph/ICC state (not re-timed)...
+[2026-07-17 07:40:21] N=50000 churn=0.1 batch=26/30 | FR=446.3s | ICC=1104.4s (n_affected=50,000/50,000=100.0%) | batch_total=1550.7s | est. sisa kombinasi ini: ~1.72 jam
+[2026-07-17 08:19:44] N=50000 churn=0.1 batch=27/30 | FR=459.5s | ICC=1324.2s (n_affected=50,000/50,000=100.0%) | batch_total=1783.7s | est. sisa kombinasi ini: ~1.39 jam
+[2026-07-17 08:57:53] N=50000 churn=0.1 batch=28/30 | FR=488.2s | ICC=1161.7s (n_affected=50,000/50,000=100.0%) | batch_total=1649.8s | est. sisa kombinasi ini: ~0.92 jam
+[2026-07-17 09:36:46] N=50000 churn=0.1 batch=29/30 | FR=486.3s | ICC=1157.5s (n_affected=50,000/50,000=100.0%) | batch_total=1643.8s | est. sisa kombinasi ini: ~0.46 jam
+[2026-07-17 10:17:09] N=50000 churn=0.1 batch=30/30 | FR=499.2s | ICC=1165.5s (n_affected=50,000/50,000=100.0%) | batch_total=1664.6s | est. sisa kombinasi ini: ~0.00 jam
+[2026-07-17 10:17:11] === FINISHED N=50000 churn=0.1 | session_added_batches=5 | avg_batch=1658.5s | mean_efficiency_pct=-242.5% ===
+[2026-07-17 10:17:11] === AUTO-STOP TRIGGERED: Just finished N=50000 churn=0.1, which is the configured stop point (AUTO_STOP_AFTER_COMBO). ===
+[2026-07-17 10:17:11] All N=50,000 combinations are now complete.
+[2026-07-17 10:17:11] Remaining combinations NOT YET started: [(100000, 0.05)]
+[2026-07-17 10:17:11] To resume and process N=100,000 churn=0.05:
+[2026-07-17 10:17:11]   Set AUTO_STOP_AFTER_COMBO = None in this script and re-run: python experiments/run_h1.py
+[2026-07-17 10:17:11] === EXPERIMENT PAUSED (clean auto-stop, not a crash) ===
+[2026-07-17 13:25:57] Batch scheme: ALL combinations use 30 batches (no overrides active). Confirmed per updated instructor requirement.
+[2026-07-17 13:25:57] H1 EXPERIMENT STARTED (or resumed)
+[2026-07-17 13:25:57] Official combinations: [(10000, 0.01), (10000, 0.05), (10000, 0.1), (50000, 0.01), (50000, 0.05), (50000, 0.1), (100000, 0.05)]
+[2026-07-17 13:25:57] N=100000 churn=0.05: has 5 batches, need 25 more to reach 30.
+[2026-07-17 13:25:57] === STARTING N=100000 churn=0.05 | standard (30 batches) ===

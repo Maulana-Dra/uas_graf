@@ -79,7 +79,7 @@ OFFICIAL_COMBINATIONS = [
 # It will skip all completed combos and continue with the final
 # remaining combination: N=100,000 churn=0.05
 # ============================================================
-AUTO_STOP_AFTER_COMBO = (50_000, 0.10)  # Stop gracefully right
+AUTO_STOP_AFTER_COMBO = None  # Stop gracefully right
 # after this combination completes, before starting the remaining
 # batches of N=100,000 churn=0.05. Set to None to disable auto-stop
 # and run all remaining combinations continuously.
